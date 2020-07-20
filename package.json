@@ -1,0 +1,22 @@
+{
+  "name": "@alexwilson/feature-flagging",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Feature Flagging API",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "docker-compose up -d && DATABASE_URL=postgres://postgres:password@localhost:5432/unleash node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@passport-next/passport": "^3.1.0",
+    "@passport-next/passport-oauth2": "^2.1.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "node-fetch": "^2.6.0",
+    "unleash-client": "^3.3.6",
+    "unleash-server": "^3.3.5"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "env": {
+                "DATABASE_URL": "postgres://postgres:password@localhost:5432/unleash",
+                "PORT": "3000",
+                "SLACK_CLIENT_ID": "6980597575.1273358959840",
+                "SLACK_CLIENT_SECRET": "b44cad5857e8a9a81282ef510b51b9ea",
+                "SLACK_CALLBACK_URL": "http://localhost:3000/auth/callback"
+            },
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/main.js"
+        }
+    ]
+}
