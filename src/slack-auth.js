@@ -52,9 +52,9 @@ function SlackAuth(passport) {
     }
     passport.use('slack', slack)
     app.get(
-        '/auth/login', passport.authenticate('slack')
+        '/login', passport.authenticate('slack')
     )
-    app.get('/auth/callback', passport.authenticate('slack', {
+    app.get('/callback', passport.authenticate('slack', {
         failureRedirect: '/auth/login',
     }), (_, res) => {
         return res.redirect('/')

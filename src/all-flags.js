@@ -3,7 +3,7 @@ const fetch = require('node-fetch')
 
 const allFlagsClient = () => {
     const instance = initialize({
-        url: `http://localhost:${process.env.PORT}/unleash/api`,
+        url: `http://localhost:${process.env.PORT}`,
         appName: 'feature-flagging',
         instanceId: 'feature-flagging',
     });
@@ -14,8 +14,9 @@ const allFlagsClient = () => {
         const context = {
             sessionId: req.headers['session'] || 'unknown'
         }
-        const flags = instance.getFeatureToggleDefinitions().map(
-            feature => ({
+        const flags = instance.getFeatureToggleDefinitions()
+            .filter(feature => !feature.name.startsWith('internal.') && !feature.name.startsWith('unleash.'))
+            .map(feature => ({
                 name: feature.name,
                 description: feature.description,
                 createdAt: feature.createdAt,
